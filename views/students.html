@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Student Information</title>
+	<script src="/js/postgres.js"></script>
+	<link rel="stylesheet" href="/css/main.css">
+	<script src='/fonts/js/all.min.js'></script>
+  </head>
+  <body>
+    <h1>Student Information</h1>
+    
+    <span id='action-links'>
+    <a href="/users/logout">Logout</a>
+    <a href="/users/students"> Information</a>
+    </span>
+
+
+	<div id='tableHead'>
+	    <tr id='trHead'>
+		<td class='title'>ID</td>
+		<td class='title'>Name</td>
+		<td class='title'>Surname</td>
+		<td class='title'>Date Joined</td>
+		<td class='title'>Fees Paid</td>
+		<td class='title'>Fess Owing</td>
+		<td class='title'>Is Owing</td>
+	    </tr>
+	</div>
+    <div id='tableDisplay'></div>
+
+
+  </body>
+</html>
+

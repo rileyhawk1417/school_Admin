@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type='text/css' href="/css/main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="/fonts/js/all.min.js"></script>
+    <title>Admin Login</title>
+  </head>
+  <body>
+      <main>
+	  <div id="login">
+    <h1>Admin Login</h1>
+
+    <div id="flashMsg">
+      <ul>
+        <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+        <li><%= error.message %></li>
+        <% }) %> <% } %>
+      </ul>
+  
+      <ul>
+        <% if(messages.success_msg) { %>
+        <li id="success_flash"><%= messages.success_msg %>
+	<i class="fas fa-check" id="success_icon"></i>
+	</li>
+        <% } %>	
+      </ul>
+  
+      <ul>
+        <% if (messages.error) { %>
+        <li id="err_flash"><%= messages.error %>
+	    <i class="fas fa-times" id="err_icon"></i>
+	</li>
+        <% } %>	
+      </ul>
+    </div>
+
+
+    <form action="/users/login" method="POST">
+      <div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <span id="action-links">
+      <span> 
+        <input id="login-btn" type="submit" value="Login" />
+      </span>
+
+      <span>
+      <a id="register-btn" href="/users/register">Not registered?</a>
+    </span>
+      </spn>
+    </form>
+	  </div>
+      </main>
+  </body>
+</html>
