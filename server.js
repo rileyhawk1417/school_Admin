@@ -8,43 +8,6 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 
-//Database Functions
-
-async function loadDB(){
-    try{
-	const results = await pool.query(`SELECT * FROM student_details`);
-	return results.rows;
-    }
-    catch(e){
-	console.log(`Error ${e}`);
-	return [];
-    }
-}
-
-async function createRecord(name, surname, amount_paid, amount_owing, dob, is_owing){
-    try{
-	await pool.query(`INSERT INTO student_details 
-             (fname, lname, amount_paid, amount_owing, date_joined, is_owing) 
-	        VALUES ($1, $2, $3, $4, $5, $6)`, 
-	          [name, surname, amount_paid, amount_owing, dob, is_owing]);
-	return true;
-    }
-    catch(e){
-	console.log(`Error ${e}`);
-	return false;
-    }
-}
-
-async function deleteRecord(id){
-    try{
-	await pool.query(`DELETE FROM student_details WHERE id = $1`, [id]);
-	return true;
-    }
-    catch(e){
-	console.log(`Error ${e}`);
-	return false;
-    }
-}
 
 const PORT = process.env.PORT || 5000;
 
@@ -76,7 +39,7 @@ app.use(express.json());
 /* Page Renderers */
 
 app.get('/', (req, res) => {
-    res.render('login');
+    res.render('login.ejs');
 });
 
 app.get('/users/register', checkAuth, (req, res) => {
@@ -100,16 +63,6 @@ app.get('/users/logout', (req, res) => {
     res.redirect('login');
 });
 
-
-app.get('/users/students', (req, res) => res.sendFile(`${__dirname}/views/students.html`));
-app.get('/users/student_data', async (req, res) => {
-    const rows = await loadDB();
-    console.log(rows);
-
-    res.setHeader('content-type', 'application/json');
-    res.send(JSON.stringify(rows));
-
-}); 
 
 app.post('/users/register', async (req, res) => {
     let {name, email, password, password2} =req.body;
@@ -178,10 +131,23 @@ app.post('/users/register', async (req, res) => {
     }
 });
 
+/* API for HTML webpages */
+
+app.get('/users/students', (req, res) => res.sendFile(`${__dirname}/views/students.html`));
+app.get('/users/student_data', async (req, res) => {
+    const rows = await loadDB();
+    // console.log(rows);
+
+    res.setHeader('content-type', 'application/json');
+    res.send(JSON.stringify(rows));
+
+}); 
+
+
 app.post('/users/student_data', async (req, res) =>{
     let result = {};
     try{
-	const rows = await createRecord();
+	// const rows = await createRecord();
 	
 	const reqJSON = req.body;
 	await createRecord(
@@ -191,7 +157,8 @@ app.post('/users/student_data', async (req, res) =>{
 	    reqJSON.amount_owing,
 	    reqJSON.date_joined,
 	    reqJSON.is_owing);
-	    result.success = true;
+        result.success = true;
+        console.log(reqJSON);
     }
     catch(e){
 	result.success = false;
@@ -199,6 +166,7 @@ app.post('/users/student_data', async (req, res) =>{
     finally{
 	res.setHeader('content-type', 'application/json');
 	res.send(JSON.stringify(result));	
+    console.log(result);
     }
 });
 
@@ -217,6 +185,44 @@ app.delete('/users/student_data', async (req, res) =>{
 	res.send(JSON.stringify(result));	
     }
 });
+
+/* Database Operations */
+
+async function loadDB(){
+    try{
+	const results = await pool.query(`SELECT * FROM student_details`);
+	return results.rows;
+    }
+    catch(e){
+	console.log(`Error ${e}`);
+	return [];
+    }
+}
+
+async function createRecord(name, surname, amount_paid, amount_owing, dob, is_owing){
+    try{
+	await pool.query(`INSERT INTO student_details 
+             (fname, lname, amount_paid, amount_owing, date_joined, is_owing) 
+	        VALUES ($1, $2, $3, $4, $5, $6)`, 
+	          [name, surname, amount_paid, amount_owing, dob, is_owing]);
+	return true;
+    }
+    catch(e){
+	console.log(`Error ${e}`);
+	return false;
+    }
+}
+
+async function deleteRecord(id){
+    try{
+	await pool.query(`DELETE FROM student_details WHERE id = $1`, [id]);
+	return true;
+    }
+    catch(e){
+	console.log(`Error ${e}`);
+	return false;
+    }
+}
 
 
 
