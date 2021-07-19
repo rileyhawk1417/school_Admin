@@ -12,16 +12,17 @@
                 "<node_internals>/**"
             ],
             "type": "pwa-node",
-            "restart": ,
+            "restart": true,
         },
         {
             "name": "Nodemon Debug",
             "port": 5000,
             "request": "attach",
-            // "skipFiles": [
-            //     "<node_internals>/**"
-            // ],
-            "type": "node"
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "restart": true,
         },
         {
             "type": "pwa-chrome",
