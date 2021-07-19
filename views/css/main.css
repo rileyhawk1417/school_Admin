@@ -166,14 +166,14 @@ ul {
     border-collapse: collapse;
 }
 
-.title{
+/* .title{
     font-weight: bold;
 }
 
 .title, .content{
     border: 2px solid black;
     text-align: center;
-}
+} */
 
 #actionBtns{
     display: flex;
@@ -204,37 +204,80 @@ ul {
     transition: all 200ms;
 }
 
-
-/*Table Contents*/
-#tableDisplay{
-    border-left: 2px solid black;
-    border-top: 2px solid black;
+#searchSelectors{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*! width: 300px; */
 }
 
+#entryForm{
+    justify-content: center;
+}
+/*
+#dataTable{
+    width: 928px;
+}
+*/
 #tableHead{
-    display: table;
-}
-
-#Content{
-    display: table-row;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .trContent{
-    /* border-bottom: 2px solid black; */
-    border-right: 2px solid black;
-    /* border-left: 2px solid black; */
-    border-top: 2px solid black;
-   
-  
-    padding: 8px 30px 5px 35px;
+    text-align: center;
 }
 
-#debt{
+#form_fill{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
+    /*! justify-content: 'center'; */
+    /*! align-self: 'center'; */
+    flex-flow: column wrap;
+    z-index: 2;
+    width: 45%;
+    height: 100%;
 }
+
+#searchSelectors{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*! width: 300px; */
+}
+
+#close_Form{
+    height: 30px;
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .trash-btn{
     color: lightcoral;
@@ -245,6 +288,6 @@ ul {
     cursor: pointer;
 }
 
-.title{
+/* .title{
     padding: 8px 30px 5px 35px;
-}
+} */
