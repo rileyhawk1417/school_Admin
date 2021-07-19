@@ -5,33 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Student Information</title>
-	<script src="/js/postgres.js"></script>
-	<link rel="stylesheet" href="/css/main.css">
-	<script src='/fonts/js/all.min.js'></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src='/fonts/js/all.js'></script>
+  
   </head>
   <body>
     <h1>Student Information</h1>
     
     <span id='action-links'>
-    <a href="/users/logout">Logout</a>
+      <a href="/users/logout">Logout</a>
     <a href="/users/students"> Information</a>
+  </span>
+  <span id='topActions'> 
+  <div id="searchSelectors">
+    <button id='name-search'>
+      Search By Name?
+    </button>
+    <button id='money-search'>
+      Search By Amount?
+    </button>
+    <button id='add-record'>
+      Add a Record?
+    </button>
+  </div>
+<span id="searchItems">
+  <div id="search_name" class='searchBar' >
+    <input type="text" name="search" id="searchName" placeholder='Try searching by name?'>
+    <button id="search_btn_name">
+      <i class="fas fa-search" id='searchIcon'></i>
+    </button>
+    <button id="close_name_search">
+      <i class="fas fa-times    "></i>
+    </button>
+  </div>
+
+  <div id="search_amount" class='searchBar' > 
+    <input type="text" name="search" id="searchAmount" placeholder='Try Searching using the amount?'>
+    <button id="search_btn_amount">
+      <i class="fas fa-search" id='searchIcon'></i>
+    </button>
+    <button id="close_money_search">
+      <i class="fas fa-times    "></i>
+    </button>
+  </div>
+</span>
+  </span>
+
+<div id="entryForm">
+  <form id='form_fill' action='/users/student_data' target="_self" method='POST'>
+    <label for="fname">First Name</label>
+    <input type="text" name="fname" id="fname" placeholder='First Name'>
+    <label for="lastName">Surname</label>
+    <input type="text" name="lname" id="lname" placeholder='Last Name/Surname'>
+    <label for="amount_paid">Amount paid</label>
+    <input type="number" name="amount_paid" id="amount_paid" placeholder='100.00'>
+    <label for="fees_owing">Amount owing</label>
+    <input type="number" name="amount_owing" id="amount_owing" placeholder='100.00'>
+    <input type="date" name="date_joined" id="DOB" placeholder='2020-07-19' >
+    <span id="selection">
+      <label for="search">Is student owing?</label>
+      <select  id="dropDown" name='is_owing'>
+        <option name='true' value="true" id="name_search" >Yes</option>
+        <option name='true' value="false" id="money_search">No</option>
+      </select>
     </span>
-
-
-	<div id='tableHead'>
-	    <tr id='trHead'>
-		<td class='title'>ID</td>
-		<td class='title'>Name</td>
-		<td class='title'>Surname</td>
-		<td class='title'>Date Joined</td>
-		<td class='title'>Fees Paid</td>
-		<td class='title'>Fess Owing</td>
-		<td class='title'>Is Owing</td>
-	    </tr>
+    <input type="submit" value="Submit" id="send">
+  </form>
+  <button id="close_Form">
+    <i class="fas fa-times    "></i>
+  </button>
+</div>
+<div id='tableHead'>
+  <table id='dataTable'>
+    <thead id='tableHead'>
+        <tr id='trHead'>
+          <th class='title'>ID</th>
+          <th class='title'>Name</th>
+          <th class='title'>Surname</th>
+          <th class='title'>Fees Paid</th>
+          <th class='title'>Fess Owing</th>
+          <th class='title'>Date Joined</th>
+          <th class='title'>Is Owing</th>
+        </tr>
+      </thead>
+      <tbody id='tableBody'></tbody>
+  </table>
 	</div>
-    <div id='tableDisplay'></div>
+  <div id='tableDisplay'></div>
+  
+  
+</body>
+<script type="module" src="/js/postgres.js" async></script>
 
-
-  </body>
-</html>
+  </html>
 
