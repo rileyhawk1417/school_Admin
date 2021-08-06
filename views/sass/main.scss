@@ -1,0 +1,271 @@
+@import 'elements/tableFormat';    
+
+body{
+
+    display: grid;
+    justify-content: 'center';
+    margin-top: 20px; 
+}
+
+main{
+    grid-column: 2;
+}
+
+
+h1{
+    margin-top: 50px;
+}
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+#grid1{
+    grid-row: 5;
+
+    /*flex starts here*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+
+
+#loginBox{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-flow: column wrap;
+}
+
+/*Elements For login Page*/
+
+#email, #password{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 45px;
+    border: 2px solid black;
+}
+
+#email:focus-within, #password:focus-within{
+    border: 2.5px solid black;
+    box-shadow: 0px 1px 7px 1px black;
+    transition: all 200ms;
+    outline: 0px solid black;
+}
+
+
+@keyframes Sample {
+    
+}
+
+.input-group{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#userIcon, #passIcon{
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+#subButton {
+    background-color: gainsboro;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-top: 10px;
+    /* grid-column-start: 1; */
+    /* grid-row: 3; */
+    /* grid-column: 2; */
+    text-decoration: none;
+    color: black;
+}
+
+#subButton:hover{
+    box-shadow: 0px 1px 7px 1px black;
+    cursor: pointer;
+    border-radius: 5px;
+
+    /*Animation*/
+    animation-duration: 5s;
+    transition: all 350ms;
+    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.btn{
+    height: 40px;
+    width: 120px;
+}
+
+.btn :hover{
+    background-color: black;
+}
+
+#login-btn{
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+#login-btn:hover{
+    border-radius: 3px;
+    box-shadow: black 0px 4px 5px 0px;
+    transition: 300ms all ease-in-out;
+}
+
+#action-links{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 70px;
+}
+
+#action-links span{
+    width: 154px;
+}
+
+/*Flash Elements*/
+ul {
+    list-style: none;
+}
+
+#success_flash{
+    background-color: lightblue;
+}
+
+#err_flash{
+    background-color: lightcoral;
+}
+
+#success_flash, #err_flash{
+    margin-left: -45px;
+    list-style: none;
+    width: 210px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    border-inline: 2px solid black;
+    border-block: 2px solid black;
+    border-radius: 5px;
+}
+/*End of elements for login page*/
+
+/*Start ELements for accounts page*/
+
+#accounts{
+    border-collapse: collapse;
+}
+
+#actionBtns{
+    display: flex;
+    flex-flow: column wrap;
+    height: 120px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+}
+
+#reloadBtn, #edit-create{
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#reloadBtn:hover, #edit-create:hover{
+    box-shadow: 0px 7px 3px 0px black;
+    flex-grow: 0.5;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms;
+}
+
+#searchSelectors{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*! width: 300px; */
+}
+
+#entryForm{
+    justify-content: center;
+}
+
+
+#form_fill{
+    display: flex;
+    /*! justify-content: 'center'; */
+    /*! align-self: 'center'; */
+    flex-flow: column wrap;
+    z-index: 2;
+    width: 45%;
+    height: 100%;
+}
+
+#searchSelectors{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*! width: 300px; */
+}
+
+#close_Form{
+    height: 30px;
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.trash-btn{
+    color: lightcoral;
+    font-size: 20px;
+}
+
+.trash-btn:hover{
+    cursor: pointer;
+}
+
