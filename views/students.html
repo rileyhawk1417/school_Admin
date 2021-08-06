@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Student Information</title>
-    <link rel="stylesheet" href="/css/main.css">
+ 
+    <link rel="stylesheet" type="text/css" href="/dest/css/main.min.css">
+    
     <script src='/fonts/js/all.js'></script>
   
   </head>
@@ -35,7 +37,7 @@
       <i class="fas fa-search" id='searchIcon'></i>
     </button>
     <button id="close_name_search">
-      <i class="fas fa-times    "></i>
+      <i id='cancel' class="fas fa-times    "></i>
     </button>
   </div>
 
@@ -45,7 +47,7 @@
       <i class="fas fa-search" id='searchIcon'></i>
     </button>
     <button id="close_money_search">
-      <i class="fas fa-times    "></i>
+      <i id='cancel' class="fas fa-times    "></i>
     </button>
   </div>
 </span>
@@ -75,6 +77,9 @@
     <i class="fas fa-times    "></i>
   </button>
 </div>
+<span id="printTable">
+  <button>Print The table?</button>
+</span>
 <div id='tableHead'>
   <table id='dataTable'>
     <thead id='tableHead'>
@@ -95,7 +100,7 @@
   
   
 </body>
-<script type="module" src="/js/postgres.js" async></script>
 
+<script type="module" src='/dest/js/script.min.js'></script>
   </html>
 
