@@ -1,293 +1,240 @@
-body{
-    display: grid;
-    justify-content: 'center';
-    margin-top: 20px; 
-}
-/*
-main{
-    grid-column: 2;
-}
-*/
-
-h1{
-    margin-top: 50px;
+.trContent {
+  /*    border-right: 2px solid black;*/
+  border-left: 2px solid black;
+  padding: 0px 4px 0px 4px;
+  text-align: center;
 }
 
-#login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
+.title {
+  /*    border-right: 2px solid black;*/
+  border-left: 2px solid black;
+  padding: 0px 4px 0px 4px;
 }
 
-#grid1{
-    grid-row: 5;
-
-    /*flex starts here*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap;
+body {
+  display: grid;
+  justify-content: "center";
+  margin-top: 20px;
 }
 
+main {
+  grid-column: 2;
+}
 
+h1 {
+  margin-top: 50px;
+}
 
-#loginBox{
- display: flex;
- align-items: center;
- justify-content: center;
- flex-flow: column wrap;
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#grid1 {
+  grid-row: 5;
+  /*flex starts here*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+#loginBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
 }
 
 /*Elements For login Page*/
-
-#email, #password{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 300px;
-    height: 45px;
-    border: 2px solid black;
+#email, #password {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 45px;
+  border: 2px solid black;
 }
 
-#email:focus-within, #password:focus-within{
-    border: 2.5px solid black;
-    box-shadow: 0px 1px 7px 1px black;
-    transition: all 200ms;
-    outline: 0px solid black;
+#email:focus-within, #password:focus-within {
+  border: 2.5px solid black;
+  box-shadow: 0px 1px 7px 1px black;
+  transition: all 200ms;
+  outline: 0px solid black;
 }
 
-
-@keyframes Sample {
-    
+@keyframes Sample {}
+.input-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.input-group{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-#userIcon, #passIcon{
-    margin-left: 20px;
-    font-size: 22px;
+#userIcon, #passIcon {
+  margin-left: 20px;
+  font-size: 22px;
 }
 
 #subButton {
-    background-color: gainsboro;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    margin-top: 10px;
-    /* grid-column-start: 1; */
-    /* grid-row: 3; */
-    /* grid-column: 2; */
-    text-decoration: none;
-    color: black;
+  background-color: gainsboro;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-top: 10px;
+  /* grid-column-start: 1; */
+  /* grid-row: 3; */
+  /* grid-column: 2; */
+  text-decoration: none;
+  color: black;
 }
 
-#subButton:hover{
-    box-shadow: 0px 1px 7px 1px black;
-    cursor: pointer;
-    border-radius: 5px;
-
-    /*Animation*/
-    animation-duration: 5s;
-    transition: all 350ms;
-    animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+#subButton:hover {
+  box-shadow: 0px 1px 7px 1px black;
+  cursor: pointer;
+  border-radius: 5px;
+  /*Animation*/
+  animation-duration: 5s;
+  transition: all 350ms;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
-.btn{
-    height: 40px;
-    width: 120px;
+.btn {
+  height: 40px;
+  width: 120px;
 }
 
-.btn :hover{
-    background-color: black;
+.btn :hover {
+  background-color: black;
 }
 
-#login-btn{
-    cursor: pointer;
-    width: 100px;
-    height: 40px;
+#login-btn {
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
 }
 
-#login-btn:hover{
-    border-radius: 3px;
-    box-shadow: black 0px 4px 5px 0px;
-    transition: 300ms all ease-in-out;
+#login-btn:hover {
+  border-radius: 3px;
+  box-shadow: black 0px 4px 5px 0px;
+  transition: 300ms all ease-in-out;
 }
 
-#action-links{
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    align-items: center;
-    height: 70px;
+#action-links {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  height: 70px;
 }
 
-#action-links span{
-    width: 154px;
+#action-links span {
+  width: 154px;
 }
 
 /*Flash Elements*/
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-#success_flash{
-    background-color: lightblue;
+#success_flash {
+  background-color: lightblue;
 }
 
-#err_flash{
-    background-color: lightcoral;
+#err_flash {
+  background-color: lightcoral;
 }
 
-#success_flash, #err_flash{
-    margin-left: -45px;
-    list-style: none;
-    width: 210px;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-    border-inline: 2px solid black;
-    border-block: 2px solid black;
-    border-radius: 5px;
+#success_flash, #err_flash {
+  margin-left: -45px;
+  list-style: none;
+  width: 210px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  border-inline: 2px solid black;
+  border-block: 2px solid black;
+  border-radius: 5px;
 }
+
 /*End of elements for login page*/
-
 /*Start ELements for accounts page*/
-
-#accounts{
-    border-collapse: collapse;
+#accounts {
+  border-collapse: collapse;
 }
 
-/* .title{
-    font-weight: bold;
+#actionBtns {
+  display: flex;
+  flex-flow: column wrap;
+  height: 120px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
 }
 
-.title, .content{
-    border: 2px solid black;
-    text-align: center;
-} */
-
-#actionBtns{
-    display: flex;
-    flex-flow: column wrap;
-    height: 120px;
-    justify-content: space-between;
-    width: 100%;
-    align-items: flex-end;
+#reloadBtn, #edit-create {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
 
-#reloadBtn, #edit-create{
-    text-decoration: none;
-    background-color: white;
-    color: black;
-    width: 150px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+#reloadBtn:hover, #edit-create:hover {
+  box-shadow: 0px 7px 3px 0px black;
+  flex-grow: 0.5;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms;
 }
 
-#reloadBtn:hover, #edit-create:hover{
-    box-shadow: 0px 7px 3px 0px black;
-    flex-grow: 0.5;
-    justify-content: center;
-    align-items: center;
-    transition: all 200ms;
+#searchSelectors {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /*! width: 300px; */
 }
 
-#searchSelectors{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /*! width: 300px; */
+#entryForm {
+  justify-content: center;
 }
 
-#entryForm{
-    justify-content: center;
-}
-/*
-#dataTable{
-    width: 928px;
-}
-*/
-#tableHead{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+#form_fill {
+  display: flex;
+  /*! justify-content: 'center'; */
+  /*! align-self: 'center'; */
+  flex-flow: column wrap;
+  z-index: 2;
+  width: 45%;
+  height: 100%;
 }
 
-.trContent{
-    text-align: center;
+#searchSelectors {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /*! width: 300px; */
 }
 
-#form_fill{
-    display: flex;
-    /*! justify-content: 'center'; */
-    /*! align-self: 'center'; */
-    flex-flow: column wrap;
-    z-index: 2;
-    width: 45%;
-    height: 100%;
+#close_Form {
+  height: 30px;
+  width: 30px;
 }
 
-#searchSelectors{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /*! width: 300px; */
+.trash-btn {
+  color: lightcoral;
+  font-size: 20px;
 }
 
-#close_Form{
-    height: 30px;
-    width: 30px;
+.trash-btn:hover {
+  cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.trash-btn{
-    color: lightcoral;
-    font-size: 20px;
-}
-
-.trash-btn:hover{
-    cursor: pointer;
-}
-
-/* .title{
-    padding: 8px 30px 5px 35px;
-} */
