@@ -1,3 +1,12 @@
+/*
+* TODO:
+* - Refactor some of the code.
+* - Try to reduce the number of results coming in to about 50,
+* - Try to allow user to cycle through results.
+* - Allow user to download results from search or the whole list.
+* - Export to CSV for admin users who want to use microsoft excel.
+* - Try and optimize by making some elements share one function
+*/
 //Script Works as the middleware to help browser execute actions
 const fields = ['id', 'fname', 'lname', 'amount_paid', 'amount_owing', 'date_joined', 'is_owing'];
 const dpTable = document.querySelector('#tableBody');
@@ -14,6 +23,10 @@ const form = document.querySelector('#entryForm');
 const close = document.querySelector('#close_Form');
 const closeMoneySearch = document.querySelector('#close_money_search');
 const closeNameSearch = document.querySelector('#close_name_search');
+const cancel_btn = document.querySelectorAll('#cancel');
+const print = document.querySelector('#printTable');
+const innerWidth = window.innerWidth;
+const innerHeight = window.innerHeight;
 
 const vars = {
 	nameSearch: document.querySelector('#searchName'),
@@ -90,7 +103,7 @@ async function loadTable() {
 			fields.forEach((c) => {
 				const cell = row.insertCell();
 				cell.innerText = res[c];
-				cell.className = 'trContent';
+				cell.classList.add('trContent');
 			});
 
 			const cell_btn = row.insertCell(); // cell for button
@@ -298,6 +311,23 @@ closeMoneySearch.addEventListener('click', (e)=>{
 closeNameSearch.addEventListener('click', (e)=>{
 	closeSearch(e);
 })
+
+print.addEventListener('click', ()=> {
+	hideElements();
+	window.print();
+
+});
+
+window.addEventListener('resize', ()=> {
+	dpTable.style.width = innerWidth;
+})
+/*
+cancel_btn.forEach(()=>{
+	addEventListener('click', ()=>{
+		console.log('Close Search');
+	})
+})
+*/
 /*
 
 async function deleteR(res){
