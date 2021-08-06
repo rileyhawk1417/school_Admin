@@ -190,7 +190,7 @@ app.delete('/users/student_data', async (req, res) =>{
 
 async function loadDB(){
     try{
-	const results = await pool.query(`SELECT * FROM student_details`);
+	const results = await pool.query(`SELECT * FROM student_details ORDER BY fname OFFSET 10 ROWS FETCH FIRST 100 ROW ONLY`);
 	return results.rows;
     }
     catch(e){
